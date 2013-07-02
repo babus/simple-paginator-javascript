@@ -140,14 +140,17 @@ $.prototype.extend(
           
                 function createPaginationElements() {
                     var paginationHTML = "";
-                    paginationHTML += "<div id='tablePagination' style='text-align: center; border-top: solid 2px #0033CC; padding-top: 5px; padding-bottom: 5px;'>";
-                    paginationHTML += "<a id='tablePagination_firstPage' href='javascript:;' class='button left'>|&lt;</a>";
-                    paginationHTML += "<a id='tablePagination_prevPage' href='javascript:;' class='button right'>&lt;&lt;</a>";
+                    paginationHTML += "<div id='pagination_div' style='text-align: center; border-top: solid 2px #0033CC; padding-top: 5px; padding-bottom: 5px;'>";
+                    paginationHTML += "<span id='pagination_perPage'>";
+                    paginationHTML += "<select id='pagination_rowsPerPage'><option value='5'>5</option></select>";
+                    paginationHTML += "per page</span>";
+                    paginationHTML += "<a id='pagination_firstPage' href='javascript:;' class='button left'>|&lt;</a>";
+                    paginationHTML += "<a id='pagination_prevPage' href='javascript:;' class='button right'>&lt;&lt;</a>";
                     paginationHTML += "Page";
-                    paginationHTML += "<input id='tablePagination_currPage' type='input' value='" + currPageNumber + "' size='1'>";
-                    paginationHTML += "of " + totalPages + "&nbsp;&nbsp;&nbsp;";
-                    paginationHTML += "<a id='tablePagination_nextPage' href='javascript:;' class='button left'>&gt;&gt;</a>";
-                    paginationHTML += "<a id='tablePagination_lastPage' href='javascript:;' class='button right'>&gt;|</a>";
+                    paginationHTML += "<input id='pagination_currPage' type='input' value='" + currPageNumber + "' size='1'>";
+                    paginationHTML += "of " + "<span id='pagination_totalPages'>" + totalPages + "</span>";
+                    paginationHTML += "<a id='pagination_nextPage' href='javascript:;' class='button left'>&gt;&gt;</a>";
+                    paginationHTML += "<a id='pagination_lastPage' href='javascript:;' class='button right'>&gt;|</a>";
                     paginationHTML += "</div>";
                     return paginationHTML;
                 }
